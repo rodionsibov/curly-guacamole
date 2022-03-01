@@ -20,6 +20,7 @@ const userData = ref(await loadUserData());
 </script>
 
 <template>
+
   <div class="profile-card">
     <div class="profile-image">
       <img :src="userData.pic" alt="">
@@ -29,8 +30,12 @@ const userData = ref(await loadUserData());
       <h3>
         {{userData.name}}
       </h3>
+      <p>
+        {{userData.bio}}
+      </p>
     </div>
   </div>
+  
 </template>
 
 <style>
