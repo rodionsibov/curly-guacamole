@@ -9,9 +9,9 @@ const loadUserData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        name: "Name Eman",
-        pic: null,
-        bio: null,
+        name: "Name",
+        pic: 'https://picsum.photos/300',
+        bio: 'Bio',
       });
     }, 2000);
   });
@@ -25,7 +25,22 @@ onMounted(async () => {
 </script>
 
 <template>
-  
+  <Suspense>
+    <template #default>
+      <div class="profile-card" v-if="userData">
+        <div class="profile-image">
+          <img :src="userData.pic" alt="" />
+          <h3>
+            {{ userData.name }}
+          </h3>
+          <p>
+            {{ userData.bio }}
+          </p>
+        </div>
+      </div>
+    </template>
+    <template #fallback>Loading...</template>
+  </Suspense>
 </template>
 
 <style>
