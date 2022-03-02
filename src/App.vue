@@ -2,9 +2,10 @@
 // This starter template is using Vue 3 <script setup> SFCs
 
 import { ref } from "@vue/reactivity";
+import { computed, onMounted } from "@vue/runtime-core";
 
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-const loadUserData = async () => {
+const loadUserData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
@@ -16,25 +17,14 @@ const loadUserData = async () => {
   });
 };
 
-const userData = ref(await loadUserData());
+const userData = ref(null);
+
+onMounted(async () => {
+  userData.value = await loadUserData();
+});
 </script>
 
 <template>
-
-  <div class="profile-card">
-    <div class="profile-image">
-      <img :src="userData.pic" alt="">
-    </div>
-    <div class="profile-info">
-      <span>Written By</span>
-      <h3>
-        {{userData.name}}
-      </h3>
-      <p>
-        {{userData.bio}}
-      </p>
-    </div>
-  </div>
   
 </template>
 
