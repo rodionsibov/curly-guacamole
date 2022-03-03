@@ -9,9 +9,14 @@ import ProfileCardSkeleton from "./components/ProfileCardSkeleton.vue";
 <template>
   <Suspense>
     <template #default>
+      <!-- <ProfileCard /> -->
       <ProfileCardSkeleton />
+
     </template>
-    <template #fallback> Loading... </template>
+    <template #fallback>
+      <!-- Loading... -->
+      <!-- <ProfileCardSkeleton /> -->
+    </template>
   </Suspense>
 </template>
 

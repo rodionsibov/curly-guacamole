@@ -29,19 +29,40 @@
 }
 
 .profile-image img {
-  width: 100%;
-  padding-top: 100%;
-  background-color: #eee;
+  width: 100px;
+  height: 100px;
+  animation: pulse-bg 1s infinite;
+}
+
+.profile-body {
+  flex-grow: 1;
 }
 
 .profile-info {
   width: 100%;
   height: 24px;
-  background-color: #eee;
+  animation: pulse-bg 1s infinite;
+}
+
+h3 {
+  animation: pulse-bg 1s infinite;
 }
 
 p {
   width: 80%;
   height: 16px;
+  animation: pulse-bg 1s infinite;
+}
+
+@keyframes pulse-bg {
+  0% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #eaeaea;
+  }
+  100% {
+    background-color: #eee;
+  }
 }
 </style>
