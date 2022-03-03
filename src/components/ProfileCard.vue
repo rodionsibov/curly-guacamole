@@ -7,7 +7,7 @@ const loadUserData = () => {
     setTimeout(() => {
       resolve({
         name: "Name Enam",
-        pic: "https://picsum.photos/300",
+        pic: "https://picsum.photos/200",
         bio: "Bio - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, non.",
       });
     }, 0);
@@ -25,9 +25,9 @@ console.log(userData);
     </div>
     <div class="profile-body">
       <p class="profile-info">Lorem, ipsum.</p>
-      <h3>
+      <h2>
         {{ userData.name }}
-      </h3>
+      </h2>
       <p>
         {{ userData.bio }}
       </p>
@@ -44,13 +44,14 @@ console.log(userData);
   min-height: 180px;
   background: whitesmoke;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px;
   overflow: hidden;
   border-radius: 20px;
 }
 
 .profile-image img {
-  max-width: 100%;
+  width: 100%;
+  min-width: 100px;
   border-radius: 50%;
   border: 5px solid teal;
   padding: 5px;
@@ -58,6 +59,12 @@ console.log(userData);
 
 .profile-info {
   text-transform: uppercase;
+  color: gray;
+  letter-spacing: 2px;
+  font-size: small;
+}
+
+p {
   color: gray;
 }
 </style>
