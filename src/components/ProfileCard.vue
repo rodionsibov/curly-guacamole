@@ -6,11 +6,11 @@ const loadUserData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        name: "Name",
+        name: "Name Enam",
         pic: "https://picsum.photos/150",
-        bio: "Bio",
+        bio: "Bio - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, non.",
       });
-    }, 3000);
+    }, 0);
   });
 };
 
@@ -22,6 +22,7 @@ console.log(userData);
   <div class="profile-card" v-if="userData">
     <div class="profile-image">
       <img :src="userData.pic" alt="" />
+      <p>Lorem, ipsum.</p>
       <h3>
         {{ userData.name }}
       </h3>
