@@ -15,7 +15,7 @@ const loadUserData = () => {
 };
 
 const userData = await loadUserData();
-
+console.log(userData);
 </script>
 
 <template>
