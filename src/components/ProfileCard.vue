@@ -10,7 +10,7 @@ const loadUserData = () => {
         pic: "https://picsum.photos/150",
         bio: "Bio",
       });
-    }, 4000);
+    }, 3000);
   });
 };
 
