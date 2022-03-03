@@ -21,7 +21,11 @@ import ProfileCard from "./components/ProfileCard.vue";
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: powderblue;
+  background: lightgrey;
 }
 </style>
