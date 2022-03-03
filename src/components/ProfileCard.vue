@@ -31,3 +31,17 @@ console.log(userData);
     </div>
   </div>
 </template>
+
+<style scoped>
+.profile-card {
+  width: 100%;
+  max-width: 700px;
+  min-height: 180px;
+  background: white;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 20px;
+}
+</style>
