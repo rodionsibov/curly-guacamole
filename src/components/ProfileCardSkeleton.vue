@@ -3,13 +3,11 @@
 
 <template>
   <div class="profile-card">
-    <div class="profile-image">
-      <img />
-    </div>
+    <div class="profile-image"></div>
     <div class="profile-body">
       <p class="profile-info"></p>
-      <h2></h2>
-      <p></p>
+      <h2 class="profile-title"></h2>
+      <p class="profile-desk"></p>
     </div>
   </div>
 </template>
@@ -29,40 +27,105 @@
 }
 
 .profile-image img {
-  width: 100px;
-  height: 100px;
-  animation: pulse-bg 1s infinite;
-}
-
-.profile-body {
-  flex-grow: 1;
+  width: 100%;
+  min-width: 100px;
+  border-radius: 50%;
+  border: 5px solid teal;
+  padding: 5px;
 }
 
 .profile-info {
-  width: 100%;
-  height: 24px;
-  animation: pulse-bg 1s infinite;
-}
-
-h3 {
-  animation: pulse-bg 1s infinite;
+  text-transform: uppercase;
+  color: gray;
+  letter-spacing: 2px;
+  font-size: small;
 }
 
 p {
-  width: 80%;
-  height: 16px;
-  animation: pulse-bg 1s infinite;
+  color: gray;
 }
 
-@keyframes pulse-bg {
-  0% {
-    background-color: #eee;
+/*
+ * Variables
+ */
+:root {
+  --card-padding: 24px;
+  --card-height: 340px;
+  --card-skeleton: linear-gradient(lightgrey var(--card-height), transparent 0);
+  --avatar-size: 32px;
+  --avatar-position: var(--card-padding) var(--card-padding);
+  --avatar-skeleton: radial-gradient(
+    circle 16px at center,
+    white 99%,
+    transparent 0
+  );
+  --title-height: 32px;
+  --title-width: 200px;
+  --title-position: var(--card-padding) 180px;
+  --title-skeleton: linear-gradient(white var(--title-height), transparent 0);
+  --desc-line-height: 16px;
+  --desc-line-skeleton: linear-gradient(
+    white var(--desc-line-height),
+    transparent 0
+  );
+  --desc-line-1-width: 230px;
+  --desc-line-1-position: var(--card-padding) 242px;
+  --desc-line-2-width: 180px;
+  --desc-line-2-position: var(--card-padding) 265px;
+  --footer-height: 40px;
+  --footer-position: 0 calc(var(--card-height) - var(--footer-height));
+  --footer-skeleton: linear-gradient(white var(--footer-height), transparent 0);
+  --blur-width: 200px;
+  --blur-size: var(--blur-width) calc(var(--card-height) - var(--footer-height));
+}
+
+/*
+ * Card Skeleton for Loading
+ */
+.card {
+  width: 280px;
+  height: var(--card-height);
+}
+.card:empty::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+      90deg,
+      rgba(211, 211, 211, 0) 0,
+      rgba(211, 211, 211, 0.8) 50%,
+      rgba(211, 211, 211, 0) 100%
+    ),
+    var(--title-skeleton), var(--desc-line-skeleton), var(--desc-line-skeleton),
+    var(--avatar-skeleton), var(--footer-skeleton), var(--card-skeleton);
+  background-size: var(--blur-size), var(--title-width) var(--title-height),
+    var(--desc-line-1-width) var(--desc-line-height),
+    var(--desc-line-2-width) var(--desc-line-height),
+    var(--avatar-size) var(--avatar-size), 100% var(--footer-height), 100% 100%;
+  background-position: -150% 0, var(--title-position),
+    var(--desc-line-1-position), var(--desc-line-2-position),
+    var(--avatar-position), var(--footer-position), 0 0;
+  background-repeat: no-repeat;
+  -webkit-animation: loading 1.5s infinite;
+  animation: loading 1.5s infinite;
+}
+
+@-webkit-keyframes loading {
+  to {
+    background-position: 350% 0, var(--title-position),
+      var(--desc-line-1-position), var(--desc-line-2-position),
+      var(--avatar-position), var(--footer-position), 0 0;
   }
-  50% {
-    background-color: #eaeaea;
-  }
-  100% {
-    background-color: #eee;
+}
+
+@keyframes loading {
+  to {
+    background-position: 350% 0, var(--title-position),
+      var(--desc-line-1-position), var(--desc-line-2-position),
+      var(--avatar-position), var(--footer-position), 0 0;
   }
 }
 </style>

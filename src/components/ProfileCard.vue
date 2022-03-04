@@ -10,7 +10,7 @@ const loadUserData = () => {
         pic: "https://picsum.photos/200",
         bio: "Bio - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, non.",
       });
-    }, 0);
+    }, 1000);
   });
 };
 
@@ -24,7 +24,7 @@ console.log(userData);
       <img :src="userData.pic" alt="" />
     </div>
     <div class="profile-body">
-      <p class="profile-info">Lorem, ipsum.</p>
+      <p class="profile-info">Lorem, ipsum</p>
       <h2>
         {{ userData.name }}
       </h2>

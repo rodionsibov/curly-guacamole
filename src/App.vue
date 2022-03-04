@@ -14,7 +14,7 @@ import ProfileCardSkeleton from "./components/ProfileCardSkeleton.vue";
 
     </template>
     <template #fallback>
-      <!-- Loading... -->
+      Loading...
       <!-- <ProfileCardSkeleton /> -->
     </template>
   </Suspense>
