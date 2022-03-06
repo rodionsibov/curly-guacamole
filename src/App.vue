@@ -9,13 +9,10 @@ import ProfileCardSkeleton from "./components/ProfileCardSkeleton.vue";
 <template>
   <Suspense>
     <template #default>
-      <!-- <ProfileCard /> -->
-      <ProfileCardSkeleton />
-
+      <ProfileCard />
     </template>
     <template #fallback>
-      Loading...
-      <!-- <ProfileCardSkeleton /> -->
+      <ProfileCardSkeleton />
     </template>
   </Suspense>
 </template>
@@ -34,5 +31,19 @@ import ProfileCardSkeleton from "./components/ProfileCardSkeleton.vue";
 
 body {
   background: lightgrey;
+}
+
+.box {
+  height: 4000px;
+  border: 2px solid magenta;
+  padding: 20px;
+}
+
+button {
+  display: block;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 3rem;
+  cursor: pointer;
 }
 </style>

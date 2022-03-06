@@ -19,7 +19,7 @@
   width: 100%;
   max-width: 700px;
   min-height: 180px;
-  background: whitesmoke;
+  background: gold;
   margin: 0 auto;
   padding: 20px;
   overflow: hidden;
