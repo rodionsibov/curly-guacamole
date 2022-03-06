@@ -6,7 +6,7 @@
     <div class="profile-image"></div>
     <div class="profile-body">
       <p class="profile-info"></p>
-      <h2 class="profile-title"></h2>
+      <h2 class="profile-title">Loading...</h2>
       <p class="profile-desk"></p>
     </div>
   </div>
